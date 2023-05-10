@@ -1,6 +1,7 @@
+.dockerignore
 .git
 .venv
 .gitignore
 .vscode
-
 __pycache__
+Dockerfile
