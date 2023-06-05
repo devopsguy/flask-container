@@ -14,4 +14,5 @@ ENV PYTHONUNBUFFERED 1
 COPY --from=builder /usr/local/lib/python3.10/site-packages/ /usr/local/lib/python3.10/site-packages/
 COPY --from=builder /usr/local/bin/ /usr/local/bin/
 COPY src/ .
+USER 1001
 CMD [ "gunicorn", "-w", "4", "-b", "0.0.0.0:3000", "--access-logfile=-", "wsgi:app" ]
